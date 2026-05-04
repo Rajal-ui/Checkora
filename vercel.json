@@ -4,7 +4,8 @@
   "buildCommand": "python manage.py collectstatic --noinput && g++ -O2 -o game/engine/main game/engine/main.cpp && chmod +x game/engine/main && mkdir -p public && echo '<!-- -->' > public/placeholder.html",
   "outputDirectory": "public",
   "functions": {
-    "api/wsgi.py": {
+    "api/wsgi": {
+      "runtime": "@vercel/python",
       "includeFiles": "{core,game,staticfiles}/**"
     }
   },
