@@ -2,13 +2,12 @@
   "version": 2,
   "installCommand": "pip install -r requirements.txt",
   "buildCommand": "bash build_files.sh",
-  "outputDirectory": "public",
   "functions": {
-    "api/wsgi.py": {
-      "includeFiles": "game/**"
+    "api/index.py": {
+      "includeFiles": "{core,game,staticfiles}/**"
     }
   },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/wsgi" }
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
